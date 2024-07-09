@@ -1,0 +1,170 @@
+.hero-section {
+    padding: 180px 0 75px 0;
+    background-image: url(../images/bg-header.png);
+    background-repeat: no-repeat;
+    background-size: 640px 608px;
+    background-position: right top;
+}
+
+.hero {
+    @include display($items:center, $space:space-between, $gap:0px);
+}
+.hero__content {
+    max-width: 520px; 
+    width: 100%;
+}
+.hero__title {
+    @include textStyle($FS:72px, $FW:400, $LH:72px, $MB:21px, $CLR:#36536B  );
+    letter-spacing: -0.55px;
+}
+.hero__form {
+    position: relative;
+    margin-bottom: 16px;
+    z-index: 1;
+}
+.hero__input {
+    padding: 16px 180px 14px 27px;
+    border: none;
+    width: 100%;
+    outline: none;
+    border-radius: 24px;
+    box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+    background-color: $text-color;
+    max-width:445px ;
+    @include textStyle($FS:15px, $FW:700, $LH:17px, $MB:0px, $CLR:rgba(54, 83, 107, 1) );
+    &::placeholder{
+        color:rgba(54, 83, 107, 0.7)  ;
+    }
+}
+.hero__btn {
+    position: absolute;
+    left:  272px;
+    top: 0;
+    bottom: 0;
+    z-index: 50;
+    @include btnStyle($W:173px, $PY:15px, $BorderColor:$bt-color, $BgColor:$bt-color, $BtnFS:15px, $BtnFW:700, $BtnLH:17px,$BtnMB:0px, $BtnTextColor:$text-color, $HoverBG:transparent, $HoverColor:$bt-color);
+    &:active{
+        opacity: 0.6;
+        background-color: $bt-color;
+        color: $text-color;
+        cursor: grabbing;
+    }
+}
+.hero__text {
+    margin-left: 27px;
+    @include textStyle($FS:15px, $FW:400, $LH:17px, $MB:0px, $CLR:rgba(108, 130, 148, 1) );
+}
+.hero__text--link {
+    @include textStyle($FS:15px, $FW:400, $LH:17px, $MB:0px, $CLR:$clr-nav-link);
+    margin-left: 5px;   
+}
+
+// media tablet start
+
+@media only screen and (max-width:850px){
+    .hero-section {
+        padding-bottom: 136px;
+        background-image: url(../images/tablet-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% ;
+        background-position: center top;
+    }
+    .hero {
+        @include display($items:center, $space:center, $gap:0px);
+        flex-direction: column-reverse;
+    }
+    .hero__img {
+        width: 159px;
+        height: 300px;
+        margin-bottom: 48px;
+    }
+    .hero__content {
+        max-width: 521px; 
+        @include display($items:center, $space:center, $gap:0px);
+        flex-direction: column;
+        
+    }
+    .hero__title {
+        @include textStyle($FS:48px, $FW:400, $LH:56px, $MB:22px, $CLR:#36536B  );
+        letter-spacing: -0.37px;
+        text-align: center;
+    }
+    .hero__text {
+        text-align: center;
+        margin-left: 0;
+    }
+    .hero__text--link {
+        @include textStyle($FS:15px, $FW:400, $LH:17px, $MB:0px, $CLR:$clr-nav-link);
+        margin-left: 5px;   
+    }
+}
+
+@media only screen and (max-width:660px){
+    .hero-section {
+        background-image: url(../images/mobile-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100% 230px;
+        background-position: center top;
+        
+    }
+}
+// media mobile start
+
+@media only screen and (max-width:600px){
+    .hero-section {
+        padding-bottom: 110px;
+       
+    }
+    
+    .hero__img {
+        width: 127px;
+        height: 239px;
+        margin-bottom: 24px;
+    }
+    .hero__content {
+        max-width: 308px; 
+        @include display($items:center, $space:center, $gap:0px);
+        flex-direction: column;
+        
+    }
+    .hero__title {
+        @include textStyle($FS:32px, $FW:400, $LH:36px, $MB:24px, $CLR:#36536B  );
+        letter-spacing: -0.25px;
+    }
+    .hero__form {
+        position: static;
+        @include display($items:center, $space:start, $gap:16px);
+        flex-direction: column;
+        margin-bottom: 24px;
+        max-width:327px;
+        width: 100%;
+    }
+    .hero__input {
+        padding: 16px 10px 14px 27px;
+        border: none;
+        width: 100%;
+        outline: none;
+        border-radius: 24px;
+        box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+        background-color: $text-color;
+        @include textStyle($FS:15px, $FW:700, $LH:17px, $MB:0px, $CLR:rgba(54, 83, 107, 1) );
+        &::placeholder{
+            color:rgba(54, 83, 107, 0.7)  ;
+        }
+        //  max-width:327px;
+    }
+    .hero__btn {
+        position: static;
+        @include btnStyle($W:100%, $PY:15px, $BorderColor:$bt-color, $BgColor:$bt-color, $BtnFS:15px, $BtnFW:700, $BtnLH:17px,$BtnMB:0px, $BtnTextColor:$text-color, $HoverBG:transparent, $HoverColor:$bt-color);
+        &:active{
+            opacity: 0.6;
+            background-color: $bt-color;
+            color: $text-color;
+            cursor: grabbing;
+        }
+    }
+    .hero__text--link {
+        @include textStyle($FS:15px, $FW:400, $LH:17px, $MB:0px, $CLR:$clr-nav-link);
+        margin-left: 5px;   
+    }
+}

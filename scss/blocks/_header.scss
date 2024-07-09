@@ -1,0 +1,78 @@
+.site-header {
+    padding: 40px 0 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    backdrop-filter: blur(10px);
+}
+
+.header {
+    @include display($items:center, $space:space-between, $gap:0px);
+}
+.header__content-wrapper {
+    @include display($items:center, $space:start, $gap:64px);
+}
+.header__logo-link {
+    display: inline-block;
+}
+
+.nav__list {
+    @include display($items:center, $space:start, $gap:40px);
+}
+
+
+.nav__link {
+    @include textStyle($FS:15px, $FW:700, $LH:17px, $MB:0px, $CLR: $clr-nav-link);
+    transition: all 0.3s linear;
+
+    &:hover{
+        color: #36536B;
+    }
+    &:active{
+        opacity: 0.6;
+        cursor: grabbing;
+    }
+}
+.header__btn {
+    
+    @include btnStyle($W:173px, $PY:15px, $BorderColor:$bt-color, $BgColor:$bt-color, $BtnFS:15px, $BtnFW:700, $BtnLH:17px,$BtnMB:0px, $BtnTextColor:$text-color, $HoverBG:transparent, $HoverColor:$bt-color);
+    &:active{
+        opacity: 0.6;
+        background-color: $bt-color;
+        color: $text-color;
+        cursor: grabbing;
+    }
+}
+
+.hamburger__btn{
+    border: none;
+    background-color: transparent;
+    display: none;
+}
+
+@media (max-width:900px){
+    .site-header{
+        padding: 40px 0 0px;
+    }
+}
+
+
+// media mobile start
+
+@media (max-width:660px){
+    .site-header{
+        padding: 40px 0 0px;
+    }
+    .nav__list{
+        display: none;
+    }
+    .hamburger__btn{
+        display: block;
+    }
+    .header__btn {
+        display: none;
+    }
+}
+
+// media mobile end

@@ -1,0 +1,114 @@
+.work-section {
+    padding: 100px 0;
+    background-color: rgba(27, 38, 47, 1);
+    background-image: url(../images/work-bg.png);
+    background-repeat: no-repeat;
+    background-size: 37%;
+    background-position: top left;
+}
+
+
+.work {
+    @include display($items:center, $space:space-between, $gap:0px);
+}
+.work__content-wrapper {
+    width: 100%;
+    max-width: 445px;
+}
+.work__title {
+    @include textStyle($FS:48px, $FW:400, $LH:56px, $MB:24px, $CLR:$text-color );
+    letter-spacing: -0.37px;
+}
+.work__text {
+    @include textStyle($FS:15px, $FW:400, $LH:28px, $MB:32px, $CLR:$text-color );
+    opacity: 0.6;
+}
+.work__link {
+    @include btnStyle($W:129px, $PY:15px, $BorderColor:$text-color, $BgColor:transparent, $BtnFS:15px, $BtnFW:700, $BtnLH:17px,$BtnMB:0px, $BtnTextColor:$text-color, $HoverBG:$text-color, $HoverColor: rgba(27, 38, 47, 1));
+    &:active{
+        opacity: 0.6;
+        background-color: transparent;
+        color: $text-color;
+        cursor: grabbing;
+    }
+}
+.work__list {
+    @include display($items:center, $space:start, $gap:50px);
+    flex-wrap: wrap;
+    max-width: 536px;
+}
+
+
+
+// media tablet start
+
+@media only screen and (max-width:1000px){
+    .work-section {
+        padding: 88px 0;
+        background-image: url(../images/work-tablet-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: top center;
+    }
+    .work {
+        @include display($items:center, $space:center, $gap:64px);
+        flex-direction: column-reverse;
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+// media tablet end
+
+
+// media mobile start
+
+@media only screen and (max-width:600px){
+    .work-section {
+        padding: 88px 0;
+        background-image: url(../images/work-mobile-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: top center;
+    }
+    .work {
+        @include display($items:center, $space:center, $gap:56px);
+    }
+    .work__list {
+        max-width: 280px;
+    }
+    
+    .work__tesla {
+        width: 107px;
+        height: 17px;
+    }
+    .work__mc {
+        width: 120px;
+        height: 26px;
+    }
+    .work__hp {
+        width: 115px;
+        height: 22px;
+    }
+    .work__ol {
+        width: 108px;
+        height: 14px;
+    }
+    .work__gog {
+        width: 79px;
+        height: 27px;
+    }
+    .work__nvd {
+        width: 113px;
+        height: 22px;
+    }
+    .work__title {
+        @include textStyle($FS:32px, $FW:400, $LH:36px, $MB:16px, $CLR:$text-color );
+        letter-spacing: -0.25px;
+    }
+    .work__text{
+        margin-bottom: 60px;
+    }
+}
+
+// media tablet end
