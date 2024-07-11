@@ -1,5 +1,5 @@
 .easy-section {
-    padding: 150px 0 0 0;
+    padding-top: 150px;
 }
 
 .easy {
@@ -22,7 +22,9 @@
 
 
 @media only screen and (max-width:953px){
-    
+    .easy-section {
+        padding-top: 100px ;
+    }
     .easy {
         @include display($items:center, $space:center, $gap:48px);
         flex-direction: column;
@@ -36,14 +38,14 @@
     .easy__content-wrapper{
         max-width: 573px;
     }
-    .easy-section {
-        padding: 100px 0;
-    }
+    
 }
 
 
 @media only screen and (max-width:605px){
-    
+    .easy-section {
+        padding-top: 80px ;
+    }
     .easy {
         @include display($items:center, $space:center, $gap:48px);
         flex-direction: column;
@@ -56,9 +58,7 @@
     .easy__content-wrapper{
         max-width: 328px;
     }
-    .easy-section {
-        padding: 80px 0;
-    }
+    
     .easy__title {
         @include textStyle($FS:36px, $FW:400, $LH:36px, $MB:24px, $CLR:rgba(54, 83, 107, 1) );
         letter-spacing: -0.28px;
