@@ -1,5 +1,5 @@
 .easy-section {
-    padding: 150px 0;
+    padding: 150px 0 0 0;
 }
 
 .easy {
@@ -21,7 +21,7 @@
 }
 
 
-@media only screen and (max-width:800px){
+@media only screen and (max-width:953px){
     
     .easy {
         @include display($items:center, $space:center, $gap:48px);
@@ -31,6 +31,7 @@
     .easy__img{
         width: 410px;
         height: 250px;
+        margin-right: 0;
     }
     .easy__content-wrapper{
         max-width: 573px;

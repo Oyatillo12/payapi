@@ -8,9 +8,30 @@
 body{
     font-family: "Public Sans", sans-serif;
     background-color: rgba(237, 243, 248, 1);
+    background-image: url(../images/bg-header.png);
+    background-repeat: no-repeat;
+    background-size: 640px 608px;
+    background-position: right top;
 }
 
 h1, h2, h3{
-    font-family: 'DM Serif Display';
+    font-family: 'DM Serif Display', sans-serif;
+}
 
+@media only screen and (max-width:850px){
+    body{
+        background-image: url(../images/tablet-bg.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center top;
+    }
+}
+@media only screen and (max-width:600px){
+    body {
+        background-image: url(../images/mobile-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+        background-position: center top;
+        
+    }
 }

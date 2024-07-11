@@ -1,10 +1,6 @@
 .site-header {
-    padding: 40px 0 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 50;
-    backdrop-filter: blur(10px);
+    padding: 40px 0 74px;
+    
 }
 
 .header {
@@ -51,9 +47,84 @@
     display: none;
 }
 
+.modal__close-btn{
+    display: none;
+
+}
+
+// modal
+.header__modal-outer {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: -100%;
+    backdrop-filter: blur(5px);
+    z-index: 50;
+    transition: all 0.3s linear;
+}
+
+.modal__inner {
+    position: fixed;
+    padding: 48px 24px 0 24px;
+    z-index: 51;
+    right: 0;
+    width: 75%;
+    height: 100vh;
+    background-color: rgba(27, 38, 47, 1);
+    text-align: center;
+}.modal__close-btn
+{
+    background-color: transparent;
+    border: none;
+    display: block;
+    margin-left: auto;
+}
+
+.show-outer{
+    right:0;
+}
+.show-inner{
+    right: 0;
+}
+.scrol-hidden{
+    overflow-y: hidden;
+}
+.modal__line{
+    display: block;
+    margin: 24px 0 43px;
+    height: 1px;
+    width: 100%;
+    background-color: rgba(251, 252, 254, 1);
+}
+    
+.modal__list {
+    @include display($items:center, $space:center, $gap:32px);
+    flex-direction: column;
+    margin-bottom: 32px;
+    
+
+}
+
+.modal__link {
+    @include textStyle($FS:20px, $FW:700, $LH:23px, $MB:0px, $CLR:rgba(251, 252, 254, 1));
+    opacity: 0.6;
+}
+.modal__contact-link {
+    // max-width: 100%;
+    @include btnStyle($W:100%, $PY:15px, $BorderColor:$bt-color, $BgColor:$bt-color, $BtnFS:15px, $BtnFW:700, $BtnLH:17px,$BtnMB:0px, $BtnTextColor:$text-color, $HoverBG:transparent, $HoverColor:$bt-color);
+    &:active{
+        opacity: 0.6;
+        background-color: $bt-color;
+        color: $text-color;
+        cursor: grabbing;
+    }
+}
+// modal
+
 @media (max-width:900px){
     .site-header{
-        padding: 40px 0 0px;
+        padding: 40px 0 48px;
     }
 }
 
@@ -62,7 +133,7 @@
 
 @media (max-width:660px){
     .site-header{
-        padding: 40px 0 0px;
+        padding: 40px 0 32px;
     }
     .nav__list{
         display: none;

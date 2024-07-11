@@ -1,0 +1,73 @@
+.ready-section {
+    padding-bottom: 96px;
+}
+
+.ready {
+    @include display($items:center, $space:space-between, $gap:0px);
+}
+.ready__title {
+    @include textStyle($FS:48px, $FW:400, $LH:56px, $MB:0px, $CLR:rgba(54, 83, 107, 1) );
+}
+.ready__form {
+    width:445px;
+}
+.ready__label {
+    width: 100%;
+    position: relative;
+}
+.ready__input {
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 15px 5px 15px 27px;
+    border-radius: 24px;
+    box-shadow: 10px 10px 25px -10px rgba(54, 83, 107, 0.25);
+    background-color: $text-color;
+    @include textStyle($FS:15px, $FW:700, $LH:17px, $MB:0px, $CLR:rgba(54, 83, 107, 1) );
+    &::placeholder{
+        opacity: 0.7    ;
+    }
+}
+.ready__btn {
+    position: absolute;
+    right: 0;
+    @include btnStyle($W:173px, $PY:14px, $BorderColor:$bt-color, $BgColor:$bt-color, $BtnFS:15px, $BtnFW:700, $BtnLH:17px,$BtnMB:0px, $BtnTextColor:$text-color, $HoverBG:transparent, $HoverColor:$bt-color);
+    &:active{
+        opacity: 0.6;
+        background-color: $bt-color;
+        color: $text-color;
+        cursor: grabbing;
+    }
+}
+
+
+@media (max-width:850px){
+    .ready{
+    @include display($items:center, $space:center, $gap:40px);
+    flex-direction: column;
+    }
+}
+
+@media (max-width:500px){
+    .ready-section {
+        padding-bottom: 80px;
+    }
+    .ready {
+        @include display($items:center, $space:center, $gap:32px);
+    }
+    .ready__title {
+        @include textStyle($FS:32px, $FW:400, $LH:36px, $MB:0px, $CLR:rgba(54, 83, 107, 1) );
+    }
+    .ready__form {
+        width:100%;
+    }
+    .ready__label {
+        position: static;
+        @include display($items:center, $space:center, $gap:16px);
+        flex-direction: column;
+    }
+    .ready__btn {
+        position: static;
+        width: 100%;
+    }
+}

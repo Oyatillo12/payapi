@@ -1,0 +1,77 @@
+.site-footer {
+    padding: 31px 0;
+    background-color: rgba(27, 38, 47, 1);
+    background-image: url(../images/footer-bg.png);
+    background-repeat: no-repeat;
+    background-size: 36%;
+    background-position: right center;
+}
+
+.footer {
+    @include display($items:center, $space:space-between, $gap:0px);
+}
+.footer__content-wrapper {
+    @include display($items:center, $space:start, $gap:64px);
+}
+.footer__logo-link {
+    display: inline-block;
+}
+.footer__list {
+    @include display($items:center, $space:start, $gap:40px);
+}
+
+.footer__page-link {
+    @include textStyle($FS:15px, $FW:400, $LH:17.63px, $MB:0px, $CLR: $text-color);
+    transition: all 0.3s linear;
+    opacity: 0.7;
+    &:hover{
+        opacity: 1;
+    }
+    &:active{
+        opacity: 0.5;
+        cursor: grabbing;
+    }
+}
+.footer__socia-list {
+    @include display($items:center, $space:start, $gap:24px);
+}
+
+.footer__socia-link {
+    display: inline-block;
+    color: $text-color;
+    transition: all 0.3s linear;
+    &:hover{
+        color: rgba(218, 109, 151, 1);
+    }
+}
+
+@media (max-width:800px){
+    .site-footer {
+        background-size: 57%;
+
+    }
+}
+
+@media (max-width:650px){
+    .site-footer {
+       padding: 41px 0 55px;
+       background-image: url(../../images/footer-mobile-bg.png);
+       background-repeat: no-repeat;
+       background-size: contain;
+       background-position: center bottom;
+    }
+    .footer {
+        @include display($items:center, $space:center, $gap:40px);
+        flex-direction: column;
+
+    }
+    .footer__content-wrapper {
+        @include display($items:center, $space:center, $gap:40px);
+        flex-direction: column;
+    }
+    .footer__list {
+        @include display($items:center, $space:center, $gap:31px);
+        flex-direction: column;
+    }
+    
+}
